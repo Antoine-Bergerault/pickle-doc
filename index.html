@@ -424,6 +424,85 @@ class Config{
                             <!-- end col -->
                         </div>
                         <!-- end row -->
+
+                        <p>The models are used to perform database queries. The models are located in <span class="path">src/Models</span>.</p>
+                        <h6>How to use a model ?</h6>
+
+                        <p>You need to load the model first :</p>
+                        <pre class="brush: php">
+                            $UserModel = new UserModel();
+                        </pre>
+                        <p>You don't need any require.</p>
+                        <p>Then you can perform requests. This are different methods for performing requests :</p>
+
+                        <ul>
+                            <li>
+                                <h6>select($arg)</h6>
+                                <p>Select the list of column.
+                                    ex : $UserModel->select(['id', 'name']);
+                                </p>
+                            </li>
+                            <li>
+                                <h6>first()</h6>
+                                <p>Get the first element</p>
+                            </li>
+                            <li>
+                                <h6>find($n, $f = 0)</h6>
+                                <p>Get n results. Begining from the second parameter (0 by default)</p>
+                            </li>
+                            <li>
+                                <h6>where($arr)</h6>
+                                <p>Adding a where statement which corresponds to the conditions given in the argument. For a safe query, you will need to use the args() method with it.
+                                    ex : $UserModel->where(['name' = 'LIKE "?%"']);
+                                </p>
+                            </li>
+                            <li>
+                                <h6>args($arr)</h6>
+                                <p>Pass a list of values for a safe query. Works with the where method.
+                                    ex : $UserModel->where(['name' => 'LIKE "?%"'])->args(['Ant']);
+                                </p>
+                            </li>
+                            <li>
+                                <h6>orderByDesc($param)</h6>
+                                <p>Order the results by desc by the given param.</p>
+                            </li>
+                            <li>
+                                <h6>orderByAsc($param)</h6>
+                                <p>Order the results by asc by the given param.</p>
+                            </li>
+                            <li>
+                                <h6>create($arg, $table = false, $pass = true)</h6>
+                                <p>Create a new element into the table (by default the table of the model, but it can be changed using the second
+                                    parameter).
+                                    If the third argument is set to true (it is by default), the 'pass' corresponding value is automatically hashed
+                                    (using PASSWORD_BCRYPT).
+                                    ex : $UserModel->create(['firstname' => 'John', 'lastname' => 'Doe', 'pass' => 'eb7v2SU83']);
+                                </p>
+                            </li>
+                            <li>
+                                <h6>reset()</h6>
+                                <p>Reset all the settings (except the table name).</p>
+                            </li>
+                            <li>
+                                <h6>sql()</h6>
+                                <p>Get the sql query.</p>
+                            </li>
+                            <li>
+                                <h6>query($sql, $data = array())</h6>
+                                <p>Performs a query.</p>
+                            </li>
+                        </ul>
+
+                        <h4>Warning !</h4>
+                        <p>Don't forget to use the run() method at the end in order to get the results (you don't need that for the create method).</p>
+
+                        <h5>An exemple :</h5>
+                        <pre class="brush: php">
+                            $UserModel = new $UserModel();
+                            $UserModel->find(10)->select(['name', 'email'])->where(['name' => 'LIKE ?%'])->args(['Jo']);
+                            $users = $UserModel->run();
+                        </pre>
+
                     </section>
                     <!-- end section -->
 
