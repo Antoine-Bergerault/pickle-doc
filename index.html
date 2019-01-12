@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <title>Pickle | Documentation by Antoine Bergerault</title>
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/stroke.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shCore.css" media="all">
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shThemeRDark.css" media="all">
+
+    <!-- CUSTOM -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <div class="container">
+
+            <section id="top" class="section docs-heading">
+                <div class="alert alert-info">
+                    <strong>Beta version!</strong> This documentation is still in beta and is not complete.
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="big-title text-center">
+                            <h1>Pickle documentation</h1>
+                            <p class="lead">Official documentation of the Pickle framework / For version 1.0</p>
+                        </div>
+                        <!-- end title -->
+                    </div>
+                    <!-- end 12 -->
+                </div>
+                <!-- end row -->
+
+                <hr>
+
+            </section>
+            <!-- end section -->
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
+                        <ul class="nav">
+                            <li><a href="#requirements">Requirements</a></li>
+                            <li><a href="#installation">How to Install Pickle</a></li>
+                            <li><a href="#configuration">Configuration</a></li>
+                            <li><a href="#routes">Route management</a></li>
+                            <li><a href="#views">The views</a></li>
+                            <li><a href="#templates">The templates</a></li>
+                            <li><a href="#functions">Integrated functions</a></li>
+                            <li><a href="#controllers">The controllers</a></li>
+                            <li><a href="#models">The models</a></li>
+                            <li><a href="#middlewares">The middlewares</a></li>
+                        </ul>
+                    </nav >
+                </div>
+                <div class="col-md-9">
+                    <section class="welcome">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Introduction<hr></h2>
+                                <div class="row">
+
+                                    <div class="col-md-12 full">
+                                        <div class="intro1">
+                                            <ul>
+                                                <li><strong>Item Name : </strong>Pickle framework</li>
+                                                <li><strong>Item Version : </strong> v 1.0</li>
+                                                <li><strong>Author  : </strong> Antoine Bergerault</li>
+                                            </ul>
+                                        </div>
+
+                                        <hr>
+                                        <div>
+                                            <p>
+                                                Pickle is a php framework made for modern web development.
+                                                It is equiped with a solid user system through the entire script.
+                                                It has an MVC architecture and a lot of methods made for a simple start for all of your projects.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- end row -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="requirements" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Requirements <a href="#top">#back to top</a><hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <p>The technologies you have to get or to have in order to use this framework :</p>
+                        <ul style="margin-left:10px">
+                            <li><h6>- A web server (xampp, wamp, laragon)</h6></li>
+                            <li><h6>- PHP 7</h6></li>
+                            <li><h6>- MySQL</h6></li>
+                            <li><h6>- Composer</h6></li>
+                        </ul>
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="installation" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">How to Install Pickle <a href="#top">#back to top</a><hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <hr>
+
+                        <h4>Installation using git</h4>
+
+                        <p>You can use the command line if git is installed on your computer. Just run this code in the command interpreter : git clone https://github.com/Antoine-Bergerault/Pickle-framework.git</p>
+
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="configuration" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Configuration <a href="#top">#back to top</a><hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <h4>Basic configuration</h4>
+
+                        <p>The file config.php located in the <span class="path">core/Tools</span> directory is the configuration for the database (MySQL). You need to run the
+                        file(s) located in the sql folder in order to make the system work.</p>
+
+                        <pre class="brush: php">
+namespace Pickle\Tools;
+class Config{
+    static $host = "localhost";//host name
+    static $username = "root";//username
+    static $password = "";//password
+    static $database = "pickle";//name of the database
+    static $CacheDirectory = "/temp";//the directory where the cache will be stored
+    static $env = 'DEV';//DEV or PROD
+    static $devmail = null;
+}</pre>
+
+                        <hr>
+
+                        <h4>MySQL database configuration</h4>
+
+                        <p>You need to run the file(s) located in the src/sql folder in order to make the system work.</p>
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="routes" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Route management <a href="#top">#back to top</a>
+                                    <hr>
+                                </h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <h4>Specify the routes</h4>
+
+                        <p>The routes have to be specified in the file <span class="path">core/Router/web.php</span> file of your application.</p>
+                        
+                        <h6>How does it work ?</h6>
+
+                        <p>
+                            Basically, this file implements new routes, created by the Router object.
+                            The declaration of a route looks like that :
+                        </p>
+
+                        <pre>Router::method(path, function);</pre>
+
+                        <p>For example :</p>
+                         <pre class="brush: php">
+                        Router::get('/home', function(){
+                            return 'Welcome !';
+                        });
+
+                        Router::post('/post', function(){
+                            return view('posts/post');
+                        });
+                    </pre>
+
+                        <p>You can also use a controller to manage the request</p>
+
+                        <pre class="brush: php">Router::get('/home', 'MainController@home');</pre>
+
+                        <h5>Going further with the routes :</h5>
+
+                        <p>
+                            As said in the introduction, Pickle comes with a rich user management system.
+                            You can control access to pages within this file.
+                        </p>
+
+                        <p>
+                            For example, you can restric a route to only connected users :
+                        </p>
+
+                        <pre class="brush: php">Router::get('/profile', ['view' => 'user/profile'])->only_if(App::is_connected());</pre>
+
+                        <p>
+                            This method takes a boolean as first argument, and an extra callback function as second argument, if the first is not equal to true.
+                            The complete list of user management methods provided by the App object :
+                        </p>
+
+                        <ul>
+                            <li>App::is_connected()</li>
+                            <li>App::getid()</li>
+                            <li>App::getname()</li>
+                            <li>App::logout()</li>
+                            <li>App::is_role(rolename)</li>
+                            <li>App::is_available(permission_name)</li>
+
+                        </ul>
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="views" class="section">
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">The views <a href="#top">#back to top</a>
+                                    <hr>
+                                </h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <p>All the views have to be created in the <span class="path">Views</span> directory. It is a simple php file containing html elements. You can use the integrated functions to interact with other files, use the App class in order to personalize the page depending on the user data and you can use all the php functions, loops...</p>
+                        <p>To display a view, you can use the <span class="function">view()</span> function :</p>
+
+                        <pre class="brush: php">
+                            view('name of the view');
+                        </pre>
+
+                        <h6>How to integrate templates to your views ?</h6>
+                        <p>You can do that by using the fillTemplate integrated function</p>
+
+                        <pre class="brush: php">
+                            fillTemplate(name, params)
+                        </pre>
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="templates" class="section">
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">The templates <a href="#top">#back to top</a>
+                                    <hr>
+                                </h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                    </section>
+                    <!-- end section -->
+
+                    <section id="functions" class="section">
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Integrated functions <a href="#top">#back to top</a>
+                                    <hr>
+                                </h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <p>Some functions are integrated in all of the framework. They are create in the <span class="path">core/Tools/function.php</span> files.
+                        You can add or delete functions as you want</p>
+                        <p>There is the list of included functions :</p>
+                        <ul>
+                            <li>
+                                <h6>debug($arr)</h6>
+                                <p>This function is just a var_dump function with html pre tags around it</p>
+                            </li>
+                            <li>
+                                <h6>redirect($path)</h6>
+                                <p>This function makes a javascript redirection with to the path argument</p>
+                            </li>
+                            <li>
+                                <h6>view($name, $data = null)</h6>
+                                <p>Render the view with the first argument name. If it is in a folder, use the / in the filename. The second argument is for asserting data using the compact php function</p>
+                            </li>
+                            <li>
+                                <h6>url($path = false)</h6>
+                                <p>Return the absolute url of a given path. If not given, it uses the default path of the router</p>
+                            </li>
+                            <li>
+                                <h6>root()</h6>
+                                <p>It returns the website root</p>
+                            </li>
+                            <li>
+                                <h6>route($name)</h6>
+                                <p>It returns the absolute path of the route with the name provided</p>
+                            </li>
+                            <li>
+                                <h6>alert($str)</h6>
+                                <p>Print a javascript alert box</p>
+                            </li>
+                            <li>
+                                <h6>get($url)</h6>
+                                <p>It returns a jquery code for executing an ajax get request to the given url</p>
+                            </li>
+                            <li>
+                                <h6>loadCSS($name)</h6>
+                                <p>It loads the css file whose the name is provided</p>
+                            </li>
+                            <li>
+                                <h6>loadJS($name)</h6>
+                                <p>It loads the css file whose the name is provided</p>
+                            </li>
+                            <li>
+                                <h6>speaking_format($date)</h6>
+                                <p>It returns the natural format of a delay between the current time and the date given.
+                                    ex : 5 minutes ago
+                                </p>
+                            </li>
+                            <li>
+                                <h6>str_random($length)</h6>
+                                <p>It returns a token whose the length is provided</p>
+                            </li>
+                            <li>
+                                <h6>listen()</h6>
+                                <p>It runs an ob_get_clean and an ob_start if the current environnement is not set to 'DEV'</p>
+                            </li>
+                            <li>
+                                <h6>fillTemplate($name, $arr = [])</h6>
+                                <p>It loads the template with the provided name, the current variables and some extra variables if the second parameter is provided</p>
+                            </li>
+                            <li>
+                                <h6>loadTemplate($name, $data = null)</h6>
+                                <p>It loads the template with the provided name and add some extra variables if a second parameter is passed</p>
+                            </li>
+                            <li>
+                                <h6>loadTemplateStyles($styles)</h6>
+                                <p>It executes the function loadCSS but you can pass either an array or a name</p>
+                            </li>
+                            <li>
+                                <h6>loadTemplateScripts($scripts)</h6>
+                                <p>It executes the function loadJS but you can pass either an array or a name</p>
+                            </li>
+                            <li>
+                                <h6>standard_format($date)</h6>
+                                <p>It returns a date format string with the 'jS F Y' format with de date given</p>
+                            </li>
+                        </ul>
+                    </section>
+                    <!-- end section -->
+
+                    <section id="controllers" class="section">
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">The controllers <a href="#top">#back to top</a>
+                                    <hr>
+                                </h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                    </section>
+                    <!-- end section -->
+
+                    <section id="models" class="section">
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">The models <a href="#top">#back to top</a>
+                                    <hr>
+                                </h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                    </section>
+                    <!-- end section -->
+
+                    <section id="middlewares" class="section">
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">The middlewares <a href="#top">#back to top</a>
+                                    <hr>
+                                </h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                    </section>
+                    <!-- end section -->
+
+                </div>
+                <!-- // end .col -->
+
+            </div>
+            <!-- // end .row -->
+
+        </div>
+        <!-- // end container -->
+
+    </div>
+    <!-- end wrapper -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/retina.js"></script>
+    <script src="js/jquery.fitvids.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+
+    <!-- CUSTOM PLUGINS -->
+    <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/syntax-highlighter/scripts/shCore.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushXml.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushCss.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushPhp.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushJScript.js"></script>
+
+</body>
+
+</html>
