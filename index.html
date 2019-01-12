@@ -426,7 +426,7 @@ class Config{
                         <!-- end row -->
 
                         <p>The models are used to perform database queries. The models are located in <span class="path">src/Models</span>.</p>
-                        <h6>How to use a model ?</h6>
+                        <h3>How to use a model ?</h3>
 
                         <p>You need to load the model first :</p>
                         <pre class="brush: php">
@@ -502,6 +502,32 @@ class Config{
                             $UserModel->find(10)->select(['name', 'email'])->where(['name' => 'LIKE ?%'])->args(['Jo']);
                             $users = $UserModel->run();
                         </pre>
+
+                        <h3>How to create a new model ?</h3>
+                        <p>First you have to choose the tablename of your new model.</p>
+                        <p>Then create a file in <span class="path">src/Models</span> like that :</p>
+                        <pre>TableModel.php</pre>
+                        <p>While "Table" is the name of the table in the database (singular not plurial).</p>
+
+                        <p>Then fill in the file like this :</p>
+                        <pre class="brush: php">                            
+                            namespace Pickle;
+
+                            //import the model reference
+                            require_once 'default/Model.php';
+
+                            class TableModel extends Model{//replace "Table" by the name of your table (singular)
+
+                                //defined the table name for this model
+                                public $table = 'table';//replace 'table' by the name of your table (plurial)
+                            
+                                /*
+                                * Create some methods here if you need it
+                                */
+
+                            }
+                        </pre>
+                        <p>And your model is operational</p>
 
                     </section>
                     <!-- end section -->
