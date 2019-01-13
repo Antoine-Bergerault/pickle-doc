@@ -176,6 +176,8 @@
                         file(s) located in the sql folder in order to make the system work.</p>
 
                         <pre class="brush: php">
+&lt;?php
+
 namespace Pickle\Tools;
 class Config{
     static $host = "localhost";//host name
@@ -185,7 +187,10 @@ class Config{
     static $CacheDirectory = "/temp";//the directory where the cache will be stored
     static $env = 'DEV';//DEV or PROD
     static $devmail = null;
-}</pre>
+}
+
+?&gt;
+</pre>
 
                         <hr>
 
@@ -446,6 +451,35 @@ class Config{
                             <!-- end col -->
                         </div>
                         <!-- end row -->
+
+                        <p>The controllers are located in <span class="path">src/Controllers</span>. The controllers are made to perform php scripts and to use models in order to render the correct view with the correct data.
+                            A Controller looks like that :
+                        </p>
+
+                        <pre class="brush: php">
+                            &lt;?php
+                            
+                            namespace Pickle;
+                            class ExampleController {
+                                
+                                //You can add methods here
+
+                                public function test(){
+
+                                    $UserModel = new UserModel();
+                                    $user = $UserModel->first()->where(['email' => '= ?'])->args(['test@example.com'])->run();
+                                    $user = $user[0];
+                                    return view('test', compact('user'));
+
+                                }
+                                
+                            }
+                            
+                            ?&gt;
+                        </pre>
+
+                        <p>It must be save as ExampleController.php</p>
+
                     </section>
                     <!-- end section -->
 
@@ -545,7 +579,9 @@ class Config{
                         <p>While "Table" is the name of the table in the database (singular not plurial).</p>
 
                         <p>Then fill in the file like this :</p>
-                        <pre class="brush: php">                            
+                        <pre class="brush: php">     
+                            &lt;?php
+                            
                             namespace Pickle;
 
                             //import the model reference
@@ -561,6 +597,8 @@ class Config{
                                 */
 
                             }
+
+                            ?&gt;
                         </pre>
                         <p>And your model is operational</p>
 
@@ -577,6 +615,38 @@ class Config{
                             <!-- end col -->
                         </div>
                         <!-- end row -->
+
+                        <p>The middlewares are located in <span class="path">src/Middlewares</span>.
+                            There are used to inject script which are common to several pages.
+                            For example, the CsrfMiddleware is used for pages which contains form(s).
+                            A middleware looks like that :
+                        </p>
+
+                        <pre class="brush: php">
+                            &lt;?php
+                            
+                            class ExampleMiddleware {
+
+                                /*
+                                * The methods you want
+                                */
+
+                            }
+                        </pre>
+                        <p>It has to be saved as ExampleMiddleware.php</p>
+                        <p>The methods can be whatever you want.</p>
+
+                        <h4>How to use a middleware ?</h4>
+                        <p>They are two different methods to use the middlewares :</p>
+                        <h5>If you want to import it on each requests and you want to use the constructor :</h5>
+                        <p>Just go to <span class="path">public/index.php</span> and edit/create this line :</p>
+                        <pre>App::activeMiddlewares(['example']);</pre>
+                        <p>If you want to use multiple middlewares you can fill the array.</p>
+
+                        <h5>If you want to use it inside a function or controller :</h5>
+                        <p>Do this like this :</p>
+                        <pre>App::middleware('example');</pre>
+
                     </section>
                     <!-- end section -->
 
