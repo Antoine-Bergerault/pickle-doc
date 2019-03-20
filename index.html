@@ -83,6 +83,7 @@
                             <li><a href="#controllers">The controllers</a></li>
                             <li><a href="#models">The models</a></li>
                             <li><a href="#middlewares">The middlewares</a></li>
+                            <li><a href="#realtime">Realtime loading</a></li>
                         </ul>
                     </nav >
                 </div>
@@ -646,6 +647,96 @@ class Config{
                         <h5>If you want to use it inside a function or controller :</h5>
                         <p>Do this like this :</p>
                         <pre>App::middleware('example');</pre>
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="realtime" class="section">
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Realtime loading <a href="#top">#back to top</a>
+                                    <hr>
+                                </h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <p>The Pickle framework offers you a way to reload your pages using javascript in order to relaunch the php script.<p>
+                        <p>On pages with this system activated, you can generate your pages using javascript. It offers you the opportunity to defer your entire php script, and to reload it multiple time in order to maintain data up to date. It is accessible from html element with the "data" class.</p>
+                        
+                        <h4>data-key</h4>
+                        <p>Print the content of the variable whose the name is given.</p>
+                        <pre class="brush: html">
+                            <div class="data" data-key="variable"></div>
+                        </pre>
+
+                        <h4>data-property</h4>
+                        <p>Print the property of the object whose the name is given.</p>
+                        <pre class="brush: html">
+                            <div class="data" data-key="object" data-property="name"></div>
+                        </pre>
+
+                        <h4>data-foreach</h4>
+                        <p>Iterate over an array. Works on different depth levels.</p>
+                        <pre class="brush: html">
+                                <div class="data" data-key="users" data-foreach="user" data-foreach-limit="2">
+                                    <p>Name:</p>
+                                    <p data-key="user" data-property="name">Name</p>
+                                    <p>Email:</p>
+                                    <p data-key="user" data-property="email">Email</p>
+                                </div>
+                            
+                                <div class="data" data-key="users" data-foreach="user" data-foreach-limit="2:4">
+                                    <div class="one">
+                                        <div class="two">
+                                            <div class="three">
+                                                <div data-key="user" data-property="name" data-transform="up"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </pre>
+
+                        <h4>data-if</h4>
+                        <p>Use a condition with a boolean variable.</p>
+                        <pre class="brush: html">
+                            <p class="data" data-key="variable"></p>
+                            <div class="data" data-key="variable" data-if="variable"></div>
+                        </pre>
+
+                        <h4>data-explore</h4>
+                        <p>Explore an object. Used to print properties without redefinding data-key.</p>
+                        <pre class="brush: html">
+                            <div data-explore="object">
+                                <div data-property="name">name..</div>
+                            </div>
+                        </pre>
+
+                        <h4>data-transform</h4>
+                        <p>Execute a function with the data given and print the result of this function.</p>
+                        <pre class="brush: html">
+                            <div data-key="user" data-property="name" data-transform="up"></div>
+
+                            <script>
+                                function up(x){
+                                    return x.toUpperCase();
+                                }
+                            </script>
+                        </pre>
+
+                        <h4>data-onload</h4>
+                        <p>Execute a function using the element as an argument.</p>
+                        <pre class="brush: html">
+                            <div data-onload="double">text</div>
+                        
+                            <script>
+                                function double(element){
+                                    let a = element.innerHTML;
+                                    element.innerHTML = a + a + a;
+                                }
+                            </script>
+                        </pre>
 
                     </section>
                     <!-- end section -->
